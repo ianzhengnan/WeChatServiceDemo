@@ -1,0 +1,66 @@
+{
+	"interval": 0,
+	"status": 0,
+	"msg": "suc",
+	"data":[
+		{
+			"type": "1",
+			"messageid": "MSG_8733864D15FB440Cb06615f075ea5805",
+			"datetime": "1420972942999",
+			"contents": [
+				{
+					"messageid": "MSG_8733864D15FB440Cb06615f075ea5805",
+					"text": "课程库中包含了大量制作精良的课程,kakdkasdkfasdfsadfsadfsadfsadfasdfsadfsadfsadfsdfsdfadfasdfasdfasdfas"
+				}
+			]
+		},
+		{
+			"type": "2",
+			"messageid": "MSG_365892D15FB440Cb06615f075ea5345",
+			"datetime": "1420972942888",
+			"contents": [
+
+				{
+					"messageid": "MSG_365892D15FB440Cb06615f075ea5345",
+					"title": "单图文事例－讲解单图文的控件组成和布局实现",
+					"text": "2014年，中国几乎所有的热门技术及应用课程，都由极客学院首发。<a href=\"http://www.jikexueyuan.com/course/1310_5.html?ss=1\">链接</a>",
+                    "imgPath": 	"http://www.c168c.com/images/attachement/jpg/site132/20110302/0016ecaae7b30ed8449e1c.jpg",
+                    "webUrl": "http://www.jikexueyuan.com/help/about.html"
+				}
+
+			]
+		},
+		{
+			"type": "3",
+			"messageid": "MSG_356289D15FB440Cb06615f075ea7858",
+			"datetime": "1420972947895",
+			"contents": [
+				{
+					"messageid": "MSG_356289D15FB440Cb06615f075ea7858",
+					"title": "多图文事例",
+                    "imgPath": "http://img.taopic.com/uploads/allimg/111118/1901-11111PJR146.jpg",
+                    "webUrl": "http://www.jikexueyuan.com/help/about.html"
+				},
+				{
+					"messageid": "MSG_356289D15FB440Cb06615f075ea7858",
+					"title": "苹果推送通知服务",
+                    "imgPath": "http://pic3.nipic.com/20090520/2489240_222437074_2.jpg",
+                    "webUrl": "http://www.jikexueyuan.com/help/about.html"
+				},
+				{
+					"messageid": "MSG_356289D15FB440Cb06615f075ea7858",
+					"title": "聚合数据ios项目开发",
+                    "imgPath": "http://pic20.nipic.com/20120506/3695685_100008655108_2.jpg",
+                    "webUrl": "http://www.jikexueyuan.com/help/about.html"
+				},
+				{
+					"messageid": "MSG_356289D15FB440Cb06615f075ea7858",
+					"title": "CALayer的使用",
+                    "imgPath": "http://pica.nipic.com/2008-01-12/2008112173656899_2.jpg",
+                    "webUrl": "http://www.jikexueyuan.com/help/about.html"
+				}
+
+			]
+		}
+	]
+}
