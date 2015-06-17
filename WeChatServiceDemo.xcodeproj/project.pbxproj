@@ -21,6 +21,9 @@
 		151C2A361B2AC548008CF10C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 151C2A351B2AC548008CF10C /* Images.xcassets */; };
 		151C2A391B2AC548008CF10C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 151C2A371B2AC548008CF10C /* LaunchScreen.xib */; };
 		151C2A451B2AC548008CF10C /* WeChatServiceDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 151C2A441B2AC548008CF10C /* WeChatServiceDemoTests.m */; };
+		15A0871E1B31451B00CA8A2F /* goto.png in Resources */ = {isa = PBXBuildFile; fileRef = 15A0871D1B31451B00CA8A2F /* goto.png */; };
+		15A087201B31482B00CA8A2F /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A0871F1B31482B00CA8A2F /* menu.json */; };
+		15A087231B314F0600CA8A2F /* ServiceMessageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A087221B314F0600CA8A2F /* ServiceMessageToolBar.m */; };
 		15A319DA1B2FCB3900E246BF /* NSDate+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A319D91B2FCB3900E246BF /* NSDate+Addition.m */; };
 		15A319DE1B2FD81700E246BF /* ServiceMessageHeadListImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A319DC1B2FD81700E246BF /* ServiceMessageHeadListImageCell.m */; };
 		15A319DF1B2FD81700E246BF /* ServiceMessageHeadListImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A319DD1B2FD81700E246BF /* ServiceMessageHeadListImageCell.xib */; };
@@ -96,6 +99,10 @@
 		151C2A3E1B2AC548008CF10C /* WeChatServiceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatServiceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		151C2A431B2AC548008CF10C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		151C2A441B2AC548008CF10C /* WeChatServiceDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatServiceDemoTests.m; sourceTree = "<group>"; };
+		15A0871D1B31451B00CA8A2F /* goto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goto.png; sourceTree = "<group>"; };
+		15A0871F1B31482B00CA8A2F /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		15A087211B314F0600CA8A2F /* ServiceMessageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceMessageToolBar.h; sourceTree = "<group>"; };
+		15A087221B314F0600CA8A2F /* ServiceMessageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceMessageToolBar.m; sourceTree = "<group>"; };
 		15A319D81B2FCB3900E246BF /* NSDate+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Addition.h"; sourceTree = "<group>"; };
 		15A319D91B2FCB3900E246BF /* NSDate+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Addition.m"; sourceTree = "<group>"; };
 		15A319DB1B2FD81700E246BF /* ServiceMessageHeadListImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceMessageHeadListImageCell.h; sourceTree = "<group>"; };
@@ -241,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				15075E8F1B2AD93600971CDF /* message.json */,
+				15A0871F1B31482B00CA8A2F /* menu.json */,
 				151C2A291B2AC548008CF10C /* Info.plist */,
 				151C2A2A1B2AC548008CF10C /* main.m */,
 			);
@@ -302,6 +310,8 @@
 				15A319DB1B2FD81700E246BF /* ServiceMessageHeadListImageCell.h */,
 				15A319DC1B2FD81700E246BF /* ServiceMessageHeadListImageCell.m */,
 				15A319DD1B2FD81700E246BF /* ServiceMessageHeadListImageCell.xib */,
+				15A087211B314F0600CA8A2F /* ServiceMessageToolBar.h */,
+				15A087221B314F0600CA8A2F /* ServiceMessageToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +324,7 @@
 				15A319EC1B2FF6B200E246BF /* cell_bg_rectangle.png */,
 				15A319E41B2FE32200E246BF /* service_icon.png */,
 				15A319EA1B2FF6A900E246BF /* line_horizontal_long.png */,
+				15A0871D1B31451B00CA8A2F /* goto.png */,
 				15A319E21B2FE11300E246BF /* cell_bg_text@2x.png */,
 				15A319E81B2FF09600E246BF /* cell_bg_list_tail.png */,
 			);
@@ -440,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A087201B31482B00CA8A2F /* menu.json in Resources */,
 				15FD67591B2EBC9D00BA8782 /* ServiceMessageSingleImageCell.xib in Resources */,
 				15FD675E1B2EBCC300BA8782 /* ServiceMessageListImageCell.xib in Resources */,
 				15075E951B2AE3BE00971CDF /* ViewController.xib in Resources */,
@@ -450,6 +462,7 @@
 				15075E901B2AD93600971CDF /* message.json in Resources */,
 				15A319E11B2FDEEF00E246BF /* cell_bg_list_head.png in Resources */,
 				15A319E51B2FE32200E246BF /* service_icon.png in Resources */,
+				15A0871E1B31451B00CA8A2F /* goto.png in Resources */,
 				151C2A391B2AC548008CF10C /* LaunchScreen.xib in Resources */,
 				15A319DF1B2FD81700E246BF /* ServiceMessageHeadListImageCell.xib in Resources */,
 				15A319E31B2FE11300E246BF /* cell_bg_text@2x.png in Resources */,
@@ -496,6 +509,7 @@
 				15FD674A1B2EA0B000BA8782 /* SDWebImageDownloader.m in Sources */,
 				15FD67531B2EA0B000BA8782 /* UIImageView+WebCache.m in Sources */,
 				15FD67521B2EA0B000BA8782 /* UIImageView+HighlightedWebCache.m in Sources */,
+				15A087231B314F0600CA8A2F /* ServiceMessageToolBar.m in Sources */,
 				15FD67451B2EA0B000BA8782 /* MKAnnotationView+WebCache.m in Sources */,
 				15FD674F1B2EA0B000BA8782 /* UIImage+GIF.m in Sources */,
 				15FD67051B2AFA1300BA8782 /* UIView+Sizes.m in Sources */,

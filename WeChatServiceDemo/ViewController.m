@@ -14,16 +14,20 @@
 #import "ServiceMessageSingleImageCell.h"
 #import "ServiceMessageListImageCell.h"
 #import "ServiceMessageHeadListImageCell.h"
+#import "NSDate+Addition.h"
+#define kTimeLableHeight 25
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *messageDatas; //message object
+@property (nonatomic, strong) NSMutableArray *isShowTimeDatas; //adjust if display time or not
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"极客学院微信号";
     // Do any additional setup after loading the view, typically from a nib.
     self.messageDatas = [[NSMutableArray alloc] init];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"message" ofType:@"json"];
@@ -34,10 +38,19 @@
      if(error){
          NSLog(@"error: %@", [error description]);
      }else{
+         double lastShowTime = 0;
+         _isShowTimeDatas = [[NSMutableArray alloc] init];
+         
          NSArray *messageArray = messageInfo[@"data"];
          for (NSDictionary *messageInfo in messageArray) {
              ServiceMessage *message = [[ServiceMessage alloc] initWithDic:messageInfo];
              [self.messageDatas addObject:message];
+             if(fabs(message.messageTime-lastShowTime) > 5*60){
+                 [_isShowTimeDatas addObject:@(YES)];
+                 lastShowTime = message.messageTime;
+             }else{
+                 [_isShowTimeDatas addObject:@(NO)];
+             }
          }
      }
     [self.tableView reloadData];
@@ -47,6 +60,44 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    BOOL isShowTime = [self.isShowTimeDatas[section] boolValue];
+    if (isShowTime) {
+        return kTimeLableHeight;
+    }else{
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    BOOL isShowTime = [self.isShowTimeDatas[section] boolValue];
+    
+    if(!isShowTime){
+        return [[UIView alloc] initWithFrame:CGRectZero];
+    }
+    
+    ServiceMessage *message = self.messageDatas[section];
+    NSString *dateString = [NSDate stringWithTimeInterval:message.messageTime];
+    UIView *headView = [[UIView  alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kTimeLableHeight)];
+    UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    timeLabel.backgroundColor = [UIColor grayColor];
+    timeLabel.font = [UIFont systemFontOfSize:12];
+    timeLabel.textColor = [UIColor whiteColor];
+    timeLabel.layer.cornerRadius = 5;
+    timeLabel.layer.masksToBounds = YES;
+    timeLabel.text = dateString;
+    timeLabel.textAlignment = NSTextAlignmentCenter;
+
+    CGSize size = [timeLabel.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize: CGSizeMake(kScreenWidth, NSIntegerMax)];
+    
+    size.width += 20;
+    timeLabel.frame = CGRectMake((kScreenWidth-size.width)/2, 3, size.width, kTimeLableHeight-6);
+    
+    [headView addSubview:timeLabel];
+    return headView;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -84,7 +135,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NSString *cellID = @"CellID";
     NSString *textCellID = @"textCellID";
     NSString *singleImageCellID = @"singleImageCellID";
     NSString *headListImageCellID = @"headListImageCellID";

@@ -1,0 +1,39 @@
+{
+	"interval": 0,
+	"status": 0,
+	"msg": "suc",
+	"data": [
+		{
+			"id": "627",
+			"msgCode": "MSG_8AE98EC99C29404EB05B99152D2E408A",
+			"type": "1",
+			"name": "最新课程",
+			"submenus": []
+		},
+		{
+			"id": "628",
+			"msgCode": "MSG_8AE9dEC98C29404EB05B99152D2E408A",
+			"type": "3",
+			"name": "最新活动",
+			"submenus": [
+				{
+					"id": "629",
+					"msgCode": "MSG_8AE98EC99C29404EB05B99152D2E408A",
+					"type": "1",
+					"name": "多图文"
+				}
+			]
+		},
+		{
+			"id": "627",
+			"msgCode": "MSG_8AE98EC99C29403EB05B99152D2E408A",
+			"type": "2",
+			"name": "最新课程",
+			"url": "http://www.baidu.com",
+			"submenus": []
+		}
+
+	]
+
+
+}

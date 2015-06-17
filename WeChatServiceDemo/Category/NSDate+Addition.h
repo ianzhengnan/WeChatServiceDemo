@@ -10,4 +10,6 @@
 
 @interface NSDate (Addition)
 - (NSString *)stringWithExcludeThisYear;
+//return time format according different time
++ (NSString *)stringWithTimeInterval:(NSTimeInterval)time;
 @end
